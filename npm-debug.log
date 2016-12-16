@@ -1,0 +1,90 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/sophistikaty/.nvm/v0.10.36/bin/node',
+1 verbose cli   '/Users/sophistikaty/.nvm/v0.10.36/bin/npm',
+1 verbose cli   'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 warn package.json foo@0.0.1 No description
+5 warn package.json foo@0.0.1 No repository field.
+6 warn package.json foo@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose install where, deps [ '/Users/sophistikaty/Code/node', [ 'underscore' ] ]
+9 info preinstall foo@0.0.1
+10 verbose readDependencies using package.json deps
+11 verbose cache add [ 'underscore@-1.2.1', null ]
+12 verbose cache add name=undefined spec="underscore@-1.2.1" args=["underscore@-1.2.1",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: 'underscore@-1.2.1',
+13 verbose parsed url   path: 'underscore@-1.2.1',
+13 verbose parsed url   href: 'underscore@-1.2.1' }
+14 verbose cache add name="underscore" spec="-1.2.1" args=["underscore","-1.2.1"]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: '-1.2.1',
+15 verbose parsed url   path: '-1.2.1',
+15 verbose parsed url   href: '-1.2.1' }
+16 verbose addNamed [ 'underscore', '-1.2.1' ]
+17 verbose addNamed [ null, null ]
+18 silly lockFile cad46826-underscore-1-2-1 underscore@-1.2.1
+19 verbose lock underscore@-1.2.1 /Users/sophistikaty/.npm/cad46826-underscore-1-2-1.lock
+20 info addNameTag [ 'underscore', '-1.2.1' ]
+21 verbose request where is /underscore
+22 verbose request registry https://registry.npmjs.org/
+23 verbose request id 058a8f9d0f009360
+24 verbose url raw /underscore
+25 verbose url resolving [ 'https://registry.npmjs.org/', './underscore' ]
+26 verbose url resolved https://registry.npmjs.org/underscore
+27 verbose request where is https://registry.npmjs.org/underscore
+28 info trying registry request attempt 1 at 07:27:38
+29 verbose etag "E0XF5C5SKQJCA43E36HXZEGN4"
+30 http GET https://registry.npmjs.org/underscore
+31 http 200 https://registry.npmjs.org/underscore
+32 silly registry.get cb [ 200,
+32 silly registry.get   { server: 'nginx/1.10.1',
+32 silly registry.get     'content-type': 'application/json',
+32 silly registry.get     'last-modified': 'Tue, 13 Dec 2016 04:51:09 GMT',
+32 silly registry.get     etag: 'W/"584f7e3d-ab1d"',
+32 silly registry.get     'content-encoding': 'gzip',
+32 silly registry.get     'cache-control': 'max-age=300',
+32 silly registry.get     'content-length': '7125',
+32 silly registry.get     'accept-ranges': 'bytes',
+32 silly registry.get     date: 'Fri, 16 Dec 2016 12:27:38 GMT',
+32 silly registry.get     via: '1.1 varnish',
+32 silly registry.get     age: '271',
+32 silly registry.get     connection: 'keep-alive',
+32 silly registry.get     'x-served-by': 'cache-iad2634-IAD',
+32 silly registry.get     'x-cache': 'HIT',
+32 silly registry.get     'x-cache-hits': '6',
+32 silly registry.get     'x-timer': 'S1481891258.199365,VS0,VE0',
+32 silly registry.get     vary: 'Accept-Encoding' } ]
+33 silly lockFile cad46826-underscore-1-2-1 underscore@-1.2.1
+34 silly lockFile cad46826-underscore-1-2-1 underscore@-1.2.1
+35 error notarget No compatible version found: underscore@'-1.2.1'
+35 error notarget Valid install targets:
+35 error notarget ["1.0.3","1.0.4","1.1.0","1.1.1","1.1.2","1.1.3","1.1.4","1.1.5","1.1.6","1.1.7","1.2.0","1.2.1","1.2.2","1.2.3","1.2.4","1.3.0","1.3.1","1.3.2","1.3.3","1.4.0","1.4.1","1.4.2","1.4.3","1.4.4","1.5.0","1.5.1","1.5.2","1.6.0","1.7.0","1.8.0","1.8.1","1.8.2","1.8.3"]
+35 error notarget
+35 error notarget This is most likely not a problem with npm itself.
+35 error notarget In most cases you or one of your dependencies are requesting
+35 error notarget a package version that doesn't exist.
+36 error System Darwin 15.6.0
+37 error command "/Users/sophistikaty/.nvm/v0.10.36/bin/node" "/Users/sophistikaty/.nvm/v0.10.36/bin/npm" "install"
+38 error cwd /Users/sophistikaty/Code/node
+39 error node -v v0.10.36
+40 error npm -v 1.4.28
+41 error code ETARGET
+42 verbose exit [ 1, true ]
