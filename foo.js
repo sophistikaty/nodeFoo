@@ -1,6 +1,16 @@
 
-var _ = require( 'underscore' );
+var http = require( 'http' ),
 
-_.each( [1,2,3], function( num ){
-	console.log('underscore says ', num);
-});
+	urls = ['shapeshed.com', 'www.bbc.co.uk', 'edition.cnn.com'];
+
+	function fetchPage(url){
+		var start = new Date();
+		http.get({ host:url}, function(response){
+			console.log('Got response from ' , url );
+			console.log('Request took ', new Date() - start, 'ms');
+		});
+	}
+
+	for ( var i = 0; i < urls.length; i++ ){
+		fetchPage(urls[i]);
+	}
