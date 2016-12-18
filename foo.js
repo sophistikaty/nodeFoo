@@ -38,24 +38,24 @@ var http = require( 'http' )
 
 	function fetchPage(){
 		console.log('fetching Page');
-		// sleep(6000);
-		http.get({host:'trafficjamapp.herokuapp.com', path: '/?delay=3000'},
-			function(response){
-				console.log('data returned from requesting fake page');
-			}).on('error', function(err){
-				console.log('there was an error ', err);
-			})
+		sleep(6000, function(){console.log('async page sleep?')});
+		// http.get({host:'trafficjamapp.herokuapp.com', path: '/?delay=3000'},
+		// 	function(response){
+		// 		console.log('data returned from requesting fake page');
+		// 	}).on('error', function(err){
+		// 		console.log('there was an error ', err);
+		// 	})
 	}
 
 	function fetchApi(){
 		console.log('fetching api');
-		// sleep(4000);
-		http.get({host:'trafficjamapp.herokuapp.com', path:'/?delay=2500'},
-			function(response){
-				console.log('data returned from api');
-			}).on('error', function(err){
-				console.log('there was an error ', err);
-			})
+		sleep(4000, function(){console.log('async api sleep?')});
+		// http.get({host:'trafficjamapp.herokuapp.com', path:'/?delay=2500'},
+		// 	function(response){
+		// 		console.log('data returned from api');
+		// 	}).on('error', function(err){
+		// 		console.log('there was an error ', err);
+		// 	})
 	}
 
 	function haveBreakfast(food,drink,callback){
@@ -69,5 +69,8 @@ var http = require( 'http' )
 		var start = new Date();
 		while((new Date().getTime() - start) < milliseconds){
 			//sleep
+		}
+		if(callback && typeof(callback == 'function')){
+			callback();
 		}
 	}
