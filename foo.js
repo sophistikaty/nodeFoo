@@ -1,6 +1,6 @@
 
-var http = require( 'http' ),
-	fs = require('fs');
+var http = require( 'http' )
+	// fs = require('fs');
 
 	fetchPage();
 	fetchApi();
@@ -36,6 +36,28 @@ var http = require( 'http' ),
 	// 	console.log('Took ', new Date() - start, 'ms');
 	// });
 
+	function fetchPage(){
+		console.log('fetching Page');
+		// sleep(6000);
+		http.get({host:'trafficjamapp.herokuapp.com', path: '/?delay=3000'},
+			function(response){
+				console.log('data returned from requesting fake page');
+			}).on('error', function(err){
+				console.log('there was an error ', err);
+			})
+	}
+
+	function fetchApi(){
+		console.log('fetching api');
+		// sleep(4000);
+		http.get({host:'trafficjamapp.herokuapp.com', path:'/?delay=2500'},
+			function(response){
+				console.log('data returned from api');
+			}).on('error', function(err){
+				console.log('there was an error ', err);
+			})
+	}
+
 	function haveBreakfast(food,drink,callback){
 		console.log('Having breakfast of '+ food + ' ' + drink);
 		if(callback && typeof(callback == 'function')){
@@ -48,16 +70,4 @@ var http = require( 'http' ),
 		while((new Date().getTime() - start) < milliseconds){
 			//sleep
 		}
-	}
-
-	function fetchPage(){
-		console.log('fake fetching Page');
-		sleep(6000);
-		console.log('data returned from requesting page');
-	}
-
-	function fetchApi(){
-		console.log('fake fetching api');
-		sleep(4000);
-		console.log('data returned from api');
 	}
