@@ -6,27 +6,35 @@ var http = require( 'http' ),
 	http.createServer(function(request, response){
 		var pathname = url.parse(request.url).pathname;
 
-		if(pathname === '/'){
-			response.writeHead(200,{
-				'Content-Type': 'text/plain'
+		switch( pathname ){
 
-			});
-			response.end('Home Page\n')
-		} else if (pathname == '/about'){
-			response.writeHead(200, {
-				'Content-Type': 'text/plain'
-			});
-			response.end('About Us\n');
-		} else if (pathname === '/redirect'){
-			response.writeHead(301, {
-				'Location': '/'
-			});
-			response.end();
-		} else {
-			response.writeHead(404,{
-				'Content-Type': 'text/plain'
-			});
-			response.end('Page Not Found\n');
+			case '/':
+				response.writeHead(200,{
+					'Content-Type': 'text/plain'
+				});
+				response.end('Home Page\n');
+			break;
+
+			case '/about':
+				response.writeHead(200, {
+					'Content-Type': 'text/plain'
+				});
+				response.end('About Us\n');
+			break;
+
+			case '/redirect':
+				response.writeHead(301, {
+					'Location': '/'
+				});
+				response.end();
+			break;
+
+			default:
+				response.writeHead(404,{
+					'Content-Type': 'text/plain'
+				});
+				response.end('Page Not Found\n');
+			break;
 		}
 
 		// response.writeHead(301,{
