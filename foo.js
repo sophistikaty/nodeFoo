@@ -1,12 +1,38 @@
 
-var http = require( 'http' )
+var http = require( 'http' ),
+	url = require('url');
 	// fs = require('fs');
 
 	http.createServer(function(request, response){
-		response.writeHead(301,{
-			'Location': 'http://www.homestarrunner.com/sbsite'
-		});
-		response.end();
+		var pathname = url.parse(request.url).pathname;
+
+		if(pathname === '/'){
+			response.writeHead(200,{
+				'Content-Type': 'text/plain'
+
+			});
+			response.end('Home Page\n')
+		} else if (pathname == '/about'){
+			response.writeHead(200, {
+				'Content-Type': 'text/plain'
+			});
+			response.end('About Us\n');
+		} else if (pathname === '/redirect'){
+			response.writeHead(301, {
+				'Location': '/'
+			});
+			response.end();
+		} else {
+			response.writeHead(404,{
+				'Content-Type': 'text/plain'
+			});
+			response.end('Page Not Found\n');
+		}
+
+		// response.writeHead(301,{
+		// 	'Location': 'http://www.homestarrunner.com/sbsite'
+		// });
+
 	}).listen(3000,'127.0.0.1');
 	console.log('Server running at http://127.0.0.1:3000/');
 
