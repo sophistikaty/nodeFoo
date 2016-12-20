@@ -3,7 +3,10 @@ var http = require( 'http' )
 	// fs = require('fs');
 
 	http.createServer(function(request, response){
-		response.end('Hello world\n');
+		response.writeHead(301,{
+			'Location': 'http://www.homestarrunner.com/sbsite'
+		});
+		response.end();
 	}).listen(3000,'127.0.0.1');
 	console.log('Server running at http://127.0.0.1:3000/');
 
