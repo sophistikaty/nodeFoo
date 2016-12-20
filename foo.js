@@ -2,6 +2,12 @@
 var http = require( 'http' )
 	// fs = require('fs');
 
+	http.createServer(function(request, response){
+		response.end('Hello world\n');
+	}).listen(3000,'127.0.0.1');
+	console.log('Server running at http://127.0.0.1:3000/');
+
+
 	fetchPage();
 	fetchApi();
 
@@ -36,26 +42,32 @@ var http = require( 'http' )
 	// 	console.log('Took ', new Date() - start, 'ms');
 	// });
 
+// This works as async only when it's using the http request method - simulating sleep is always sync?
+
 	function fetchPage(){
 		console.log('fetching Page');
-		sleep(6000, function(){console.log('async page sleep?')});
-		// http.get({host:'trafficjamapp.herokuapp.com', path: '/?delay=3000'},
-		// 	function(response){
-		// 		console.log('data returned from requesting fake page');
-		// 	}).on('error', function(err){
-		// 		console.log('there was an error ', err);
-		// 	})
+
+		// sleep(6000, function(){console.log('async page sleep?')});
+		
+		http.get({host:'trafficjamapp.herokuapp.com', path: '/?delay=3000'},
+			function(response){
+				console.log('data returned from requesting fake page');
+			}).on('error', function(err){
+				console.log('there was an error ', err);
+			})
 	}
 
 	function fetchApi(){
 		console.log('fetching api');
-		sleep(4000, function(){console.log('async api sleep?')});
-		// http.get({host:'trafficjamapp.herokuapp.com', path:'/?delay=2500'},
-		// 	function(response){
-		// 		console.log('data returned from api');
-		// 	}).on('error', function(err){
-		// 		console.log('there was an error ', err);
-		// 	})
+
+		// sleep(4000, function(){console.log('async api sleep?')});
+
+		http.get({host:'trafficjamapp.herokuapp.com', path:'/?delay=2500'},
+			function(response){
+				console.log('data returned from api');
+			}).on('error', function(err){
+				console.log('there was an error ', err);
+			})
 	}
 
 	function haveBreakfast(food,drink,callback){
